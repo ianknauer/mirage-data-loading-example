@@ -1,0 +1,31 @@
+<div class="tAC--set u--m__b__0 {{if this.isEditing "tAC--set--dashed"}}" data-test-id="social set">
+  {{!-- Instagram --}}
+  {{#if this.hasInstagramProfile}}
+    <Account::SocialIdentity::Item @socialProfile={{this.instagramProfile}} />
+  {{else}}
+    <Account::SocialIdentity::PlaceholderItem @platform="instagram" data-test-id="placeholder" />
+  {{/if}}
+  {{!-- Facebook --}}
+  {{#if this.hasFacebookProfile}}
+    <Account::SocialIdentity::Item @socialProfile={{this.facebookProfile}} data-test-id="facebook profile" />
+  {{else}}
+    <Account::SocialIdentity::PlaceholderItem @platform="facebook" data-test-id="placeholder"/>
+  {{/if}}
+  {{!-- Twitter --}}
+  {{#if this.hasTwitterProfile}}
+    <Account::SocialIdentity::Item @socialProfile={{this.twitterProfile}} data-test-id="twitter profile" />
+  {{else}}
+    <Account::SocialIdentity::PlaceholderItem @platform="twitter" data-test-id="placeholder"/>
+  {{/if}}
+  {{!-- Pinterest --}}
+  {{#if this.hasPinterestProfile}}
+    <Account::SocialIdentity::Item @socialProfile={{this.pinterestProfile}} data-test-id="pinterest profile"/>
+  {{else}}
+    <Account::SocialIdentity::PlaceholderItem @platform="pinterest" data-test-id="placeholder"/>
+  {{/if}}
+  {{!-- Profile Status --}}
+</div>
+
+{{#if this.hasErrors}}
+  <span data-test-id="social set error message">Connection expired</span>
+{{/if}}
